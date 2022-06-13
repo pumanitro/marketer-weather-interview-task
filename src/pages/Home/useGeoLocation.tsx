@@ -5,7 +5,7 @@ type Location = {
   lng: number;
 };
 
-type GeoLocation = Location | null;
+export type GeoLocation = Location | null;
 
 export const useGeoLocation = () => {
   const [geoLocation, setGeoLocation] = useState<GeoLocation>(null);
@@ -31,5 +31,5 @@ export const useGeoLocation = () => {
     }
   }, []);
 
-  return [isLoading, geoLocation];
+  return [isLoading, geoLocation] as [boolean, GeoLocation];
 };

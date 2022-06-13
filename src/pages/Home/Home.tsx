@@ -1,9 +1,14 @@
 import React, { FunctionComponent } from 'react';
 import { useGeoLocation } from './useGeoLocation';
 import { Spinner } from '../../components/Spinner/Spinner';
+import { useUserWeather } from './useUserWeather';
 
 export const Home: FunctionComponent = () => {
   const [isLoading, geoLocation] = useGeoLocation();
+  const [weather] = useUserWeather(geoLocation);
+
+  // todo: remove
+  console.log(weather);
 
   if (isLoading) {
     return <Spinner />;
