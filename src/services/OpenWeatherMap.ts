@@ -44,4 +44,14 @@ export const OpenWeatherMapService = {
     );
     return resp.data;
   },
+  findCity: async (partialName: string) => {
+    const resp = await axiosInstance.get(
+      buildUrl('data/2.5/find', {
+        q: partialName,
+        units: 'metric',
+        appid: process.env['REACT_APP_OPENWEATHERMAP_API_KEY'] as string,
+      })
+    );
+    return resp.data;
+  },
 };

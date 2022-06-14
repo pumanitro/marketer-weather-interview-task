@@ -2,6 +2,7 @@ import React, { FunctionComponent } from 'react';
 import { useGeoLocation } from './useGeoLocation';
 import { Spinner } from '../../components/Spinner/Spinner';
 import { useUserWeather } from './useUserWeather';
+import { CitySearch } from './CitySearch';
 
 export const Home: FunctionComponent = () => {
   const [isLoading, geoLocation] = useGeoLocation();
@@ -20,6 +21,7 @@ export const Home: FunctionComponent = () => {
 
   return (
     <>
+      <CitySearch onSelect={item => console.log(item)} />
       {/*
       // @ts-ignore*/}
       {geoLocation.lat} {geoLocation.lng}
