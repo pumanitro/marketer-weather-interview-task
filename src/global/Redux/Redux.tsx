@@ -17,5 +17,6 @@ if (process.env.NODE_ENV === 'development' && module.hot) {
 export type AppDispatch = typeof store.dispatch;
 
 export const Redux: FC<{}> = ({ children }) => {
+  // @ts-ignore
   return <Provider store={store}>{children}</Provider>;
 };

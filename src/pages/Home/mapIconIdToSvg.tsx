@@ -9,8 +9,10 @@ import Thunder from 'assets/thunder.svg';
 import Snowy6 from 'assets/snowy-6.svg';
 
 export const mapIconIdToSvg = (iconId: string) => {
+  const unifiedId = iconId.replace('n', 'd');
+
   // ids based on API
-  switch (iconId) {
+  switch (unifiedId) {
     case '01d':
       return Day;
     case '02d':

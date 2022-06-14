@@ -8,6 +8,7 @@ Weather app for marketer.tech interview
 ## What I could do better
 
 [] better type definition for APIs object
+[] store in local storage searched cities or in DB
 
 ## Technological stack
 
