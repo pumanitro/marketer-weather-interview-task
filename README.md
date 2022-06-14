@@ -1,6 +1,10 @@
 ## Main description
 
-Cra boilerplate to create frontend react applications.
+Weather app for marketer.tech interview
+
+## What I could do better
+
+[] better type definition for APIs object
 
 ## Technological stack
 
@@ -15,10 +19,6 @@ Cra boilerplate to create frontend react applications.
 - redux (client-state library)
 - apollo with graphql
 - eslint + prettier + husky
-
-## TO-DO
-- [] Add redirection url consts
-- [] Typography, z-index to CoreTheme
 
 ## Directories structure
 

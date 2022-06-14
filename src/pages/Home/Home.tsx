@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useState } from 'react';
 import { useGeoLocation } from './useGeoLocation';
 import { Spinner } from '../../components/Spinner/Spinner';
 import { useUserWeather } from './useUserWeather';
 import { CitySearch } from './CitySearch';
 import styled from 'styled-components';
+import { SearchedCities } from './SearchedCities';
 
 const SearchWrapper = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const SearchWrapper = styled.div`
 export const Home: FunctionComponent = () => {
   const [isLoading, geoLocation] = useGeoLocation();
   const [weather] = useUserWeather(geoLocation);
+  const [searchedCities, setSearchedCities] = useState<any>([]);
 
   // todo: remove
   console.log(weather);
@@ -30,11 +32,12 @@ export const Home: FunctionComponent = () => {
     <>
       <SearchWrapper>
         <h1>MinVærApp</h1>
-        <CitySearch onSelect={item => console.log(item)} />
+        <CitySearch onSelect={item => setSearchedCities([...searchedCities, item])} />
       </SearchWrapper>
       {/*
       // @ts-ignore*/}
       {geoLocation.lat} {geoLocation.lng}
+      <SearchedCities searchedCities={searchedCities} />
     </>
   );
 };

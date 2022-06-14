@@ -13,6 +13,8 @@ const StyledAutocomplete = styled(AutoComplete)`
   width: 300px;
 `;
 
+export const NO_RESULTS = 'No results';
+
 export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
   const [items, setItems] = useState([]);
 
@@ -20,8 +22,8 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
     items.length === 0
       ? [
           {
-            value: 'No results',
-            label: 'No results',
+            value: NO_RESULTS,
+            label: NO_RESULTS,
           },
         ]
       : _.uniqBy(
@@ -30,6 +32,7 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
             return {
               value: label,
               label,
+              item,
             };
           }),
           'label'
@@ -41,7 +44,7 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
       options={options}
       defaultActiveFirstOption={false}
       style={{ width: 300 }}
-      onSelect={onSelect}
+      onSelect={(_: any, option: any) => onSelect(option.item)}
       filterOption={false}
       onSearch={_.throttle(async (search: string) => {
         try {
