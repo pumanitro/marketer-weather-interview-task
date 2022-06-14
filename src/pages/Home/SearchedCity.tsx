@@ -10,6 +10,8 @@ const SearchTextWrapper = styled.div`
 `;
 
 const StyledCard = styled(Card)`
+  margin-bottom: 8px;
+
   .ant-card-body {
     display: flex;
     justify-content: space-between;
@@ -17,16 +19,16 @@ const StyledCard = styled(Card)`
   }
 `;
 
-export const SearchedCity: FC<any> = ({ city, key }) => {
+export const SearchedCity: FC<any> = ({ city }) => {
   const iconUrl = mapIconIdToSvg(city.weather[0].icon) || '';
 
   return (
-    <StyledCard key={key}>
+    <StyledCard>
       <SearchTextWrapper>
         <h2>{city.name}</h2>
         <h3>{Math.round(city.main.temp)} °C</h3>
       </SearchTextWrapper>
-      <img src={iconUrl} width={64} />
+      <img src={iconUrl} width={124} />
     </StyledCard>
   );
 };

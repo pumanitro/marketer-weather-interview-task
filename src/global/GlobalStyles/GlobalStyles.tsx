@@ -13,10 +13,12 @@ export const GlobalStyles = createGlobalStyle<ThemeInterface>`
   html {
     font-family: Roboto, sans-serif;
     padding: 12px 24px;
+    height: 100%;
   }
   
   body {
     color: ${props => props.theme.colors.utils.text.dark};
+    height: 100%;
   }
   
   a {
