@@ -21,13 +21,19 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
       ? [
           {
             value: 'No results',
+            label: 'No results',
           },
         ]
-      : items.map((item: any) => {
-          return {
-            value: `${item.name}, ${item.sys.country}, ${item.main.temp} °C`,
-          };
-        });
+      : _.uniqBy(
+          items.map((item: any) => {
+            const label = `${item.name}, ${item.sys.country}, ${item.main.temp} °C`;
+            return {
+              value: label,
+              label,
+            };
+          }),
+          'label'
+        );
 
   return (
     <StyledAutocomplete
@@ -36,6 +42,7 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
       defaultActiveFirstOption={false}
       style={{ width: 300 }}
       onSelect={onSelect}
+      filterOption={false}
       onSearch={_.throttle(async (search: string) => {
         try {
           const cities = await OpenWeatherMapService.findCity(search);
@@ -43,7 +50,7 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
         } catch {}
       }, 200)}
     >
-      <Input.Search size="large" placeholder="Search city..." enterButton />
+      <Input.Search size="large" autoComplete="off" placeholder="Search city..." enterButton />
     </StyledAutocomplete>
   );
 };
