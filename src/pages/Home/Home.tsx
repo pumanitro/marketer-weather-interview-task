@@ -18,9 +18,6 @@ export const Home: FunctionComponent = () => {
   const [weather] = useUserWeather(geoLocation);
   const [searchedCities, setSearchedCities] = useState<any>([]);
 
-  // todo: remove
-  console.log(weather);
-
   if (isLoading) {
     return <Spinner />;
   }
@@ -40,7 +37,7 @@ export const Home: FunctionComponent = () => {
       ) : (
         <CurrentWeather weather={weather} />
       )}
-      <SearchedCities searchedCities={searchedCities && searchedCities.filter((search: any) => !search)} />
+      <SearchedCities searchedCities={searchedCities && searchedCities.filter((search: any) => search)} />
     </>
   );
 };
