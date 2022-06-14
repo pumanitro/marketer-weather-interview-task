@@ -45,6 +45,9 @@ export const OpenWeatherMapService = {
     return resp.data;
   },
   findCity: async (partialName: string) => {
+    if (partialName.length <= 2) {
+      return null;
+    }
     const resp = await axiosInstance.get(
       buildUrl('data/2.5/find', {
         q: partialName,
