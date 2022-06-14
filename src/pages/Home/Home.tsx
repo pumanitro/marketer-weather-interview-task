@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from 'react';
 import { useGeoLocation } from './useGeoLocation';
 import { Spinner } from '../../components/Spinner/Spinner';
 import { useUserWeather } from './useUserWeather';
-import { CitySearch } from './CitySearch';
+import { CitySearch, NO_RESULTS } from './CitySearch';
 import styled from 'styled-components';
 import { SearchedCities } from './SearchedCities';
 
@@ -37,7 +37,7 @@ export const Home: FunctionComponent = () => {
       {/*
       // @ts-ignore*/}
       {geoLocation.lat} {geoLocation.lng}
-      <SearchedCities searchedCities={searchedCities} />
+      <SearchedCities searchedCities={searchedCities.filter((search: any) => search.label !== NO_RESULTS)} />
     </>
   );
 };
