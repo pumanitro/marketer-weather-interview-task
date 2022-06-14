@@ -28,7 +28,7 @@ export const SearchedCity: FC<any> = ({ city }) => {
         <h2>{city.name}</h2>
         <h3>{Math.round(city.main.temp)} °C</h3>
       </SearchTextWrapper>
-      <img src={iconUrl} width={124} />
+      <img alt={`Weather visual representation`} src={iconUrl} width={124} />
     </StyledCard>
   );
 };
