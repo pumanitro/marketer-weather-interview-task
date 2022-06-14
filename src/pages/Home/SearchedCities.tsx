@@ -3,7 +3,7 @@ import { SearchedCity } from './SearchedCity';
 
 export const SearchedCities: FC<any> = ({ searchedCities }) => {
   if (!searchedCities.length) {
-    return null;
+    return <div> Use top right search to get more cities listed </div>;
   }
 
   return (
