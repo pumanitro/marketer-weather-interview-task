@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle<ThemeInterface>`
   
   html {
     font-family: Roboto, sans-serif;
+    padding: 12px 24px;
   }
   
   body {
