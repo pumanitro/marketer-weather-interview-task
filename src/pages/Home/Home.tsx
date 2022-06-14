@@ -24,7 +24,7 @@ export const Home: FunctionComponent = () => {
   }
 
   if (geoLocation === null) {
-    return <div> Cant retrieve geolocation </div>;
+    return <div> This app requires geolocation to fully work :/ </div>;
   }
 
   return (
