@@ -2,6 +2,9 @@
 
 Weather app for marketer.tech interview
 
+![Optional Text](./desktop.png)
+![Optional Text](./mobile.png)
+
 ## What I could do better
 
 [] better type definition for APIs object
