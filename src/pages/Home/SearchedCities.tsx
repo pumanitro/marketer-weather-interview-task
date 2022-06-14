@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { NO_RESULTS } from './CitySearch';
+import { SearchedCity } from './SearchedCity';
 
 export const SearchedCities: FC<any> = ({ searchedCities }) => {
   if (!searchedCities.length) {
@@ -8,12 +8,10 @@ export const SearchedCities: FC<any> = ({ searchedCities }) => {
 
   return (
     <div>
-      <div>Searched cities:</div>
-      {searchedCities
-        .filter((search: any) => search.label !== NO_RESULTS)
-        .map((search: any, i: number) => {
-          return <span key={i}>{search.name}</span>;
-        })}
+      <h2>Searched cities:</h2>
+      {searchedCities.map((search: any, i: number) => {
+        return <SearchedCity key={i} city={search} />;
+      })}
     </div>
   );
 };

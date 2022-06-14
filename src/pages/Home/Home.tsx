@@ -37,7 +37,9 @@ export const Home: FunctionComponent = () => {
       {/*
       // @ts-ignore*/}
       {geoLocation.lat} {geoLocation.lng}
-      <SearchedCities searchedCities={searchedCities.filter((search: any) => search.label !== NO_RESULTS)} />
+      <SearchedCities
+        searchedCities={searchedCities && searchedCities.filter((search: any) => search.label !== NO_RESULTS)}
+      />
     </>
   );
 };

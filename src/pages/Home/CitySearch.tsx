@@ -27,10 +27,11 @@ export const CitySearch: FC<CitySearchProps> = ({ onSelect }) => {
           },
         ]
       : _.uniqBy(
-          items.map((item: any) => {
+          items.map((item: any, i) => {
             const label = `${item.name}, ${item.sys.country}, ${item.main.temp} °C`;
             return {
-              value: label,
+              value: item.name,
+              key: label + i,
               label,
               item,
             };
