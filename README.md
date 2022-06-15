@@ -5,7 +5,7 @@ Weather app for marketer.tech interview
 ![Optional Text](./desktop.png)
 ![Optional Text](./mobile.png)
 
-## What I could do better
+## What could I do better
 
 [] better type definition for APIs object
 [] store in local storage searched cities or in DB
