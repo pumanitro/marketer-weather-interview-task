@@ -23,6 +23,7 @@ Weather app for marketer.tech interview
 - redux (client-state library)
 - apollo with graphql
 - eslint + prettier + husky
+- cypress for E2E tests
 
 ## Directories structure
 
