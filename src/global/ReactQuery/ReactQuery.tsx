@@ -14,7 +14,7 @@ export const queryCache = new QueryCache({
 export const ReactQuery: FC<{}> = ({ children }) => {
   return (
     <ReactQueryCacheProvider queryCache={queryCache}>
-      <ReactQueryDevtools initialIsOpen />
+      <ReactQueryDevtools initialIsOpen={false} />
       {children}
     </ReactQueryCacheProvider>
   );
